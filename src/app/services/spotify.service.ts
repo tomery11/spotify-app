@@ -14,12 +14,12 @@ export class SpotifyService {
   private authToken: any;
 
 
-  private authKey = "Bearer BQDC9J-4yXhkxV0IfOymLrrI9qmXjUZAlbWlLvYO6kAPT1U_7H7TNJ6nbcUPb299cmi6rLdJR6A2SIqp9CYbwIuyriEs72w7QmPshbB47aagDOTdMV0017UwJnxot0SxS7IXqykUCuJleaPJ"
+  private authKey = "Bearer BQC51rN7FpCfPhsj-i1z28Lg-9UTdmijjzZJGwHjhxKvsm1LcwrgRKedPOaO9ulTbCIMn-f3LD4fK6J5_mijPjlwzV5ulo-sA6nOK-E6Pr6dXf40hCLgL6PBGvB4NYburQkPqx0aUujKdx6S"
   private httpOptions = {
     headers: new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // 'Authorization': this.authKey;
+      'Authorization': this.authKey
     })
   }
 
