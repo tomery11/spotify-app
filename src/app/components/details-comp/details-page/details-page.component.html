@@ -1,37 +1,30 @@
+<app-nav-bar></app-nav-bar>
+
+
+
 <div class="row mt-4 p-5">
   <div class="col-md-2">
-    <img src="assets/images/album-test/aerosmith.jpg" class="rounded img-fluid float-start" alt="...">
+    <img src="{{album.images[0].url}}" class="rounded img-fluid float-start" alt="...">
   </div>
   <div class="col-md-3 my-3">
-    <h3 class="text-center my-5">band</h3>
-    <h3 class="text-center my-5">album</h3>
+    <h3 class="text-center my-2">Artist: {{album.artists[0].name}}</h3>
+    <h3 class="text-center my-2">Album: {{album.name}}</h3>
+
   </div>
 
 </div>
 
+<!--<pre>{{tracks | json}}</pre>-->
+
 <div class="container">
   <div class="row mt-5">
-    <div class="col text-center">
-      <app-track-card></app-track-card>
-
-    </div>
-    <div class="col text-center">
-      <app-track-card></app-track-card>
-    </div>
-    <div class="col text-center">
-      <app-track-card></app-track-card>
-
-    </div>
-    <div class="col text-center">
-      <app-track-card></app-track-card>
-
-    </div> <div class="col text-center">
-    <app-track-card></app-track-card>
-
-  </div>
-    <div class="col text-center">
-      <app-track-card></app-track-card>
-
+    <div class="col-2 text-center my-3" *ngFor="let track of tracks">
+      <app-track-card
+      imgUrl="{{album.images[0].url}}"
+      trackTitle="{{track.name}}"
+      length="{{ track.duration_ms }}"
+      trackNumber="{{track.track_number}}"
+      ></app-track-card>
     </div>
 
 

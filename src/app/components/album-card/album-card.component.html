@@ -1,8 +1,8 @@
-<div class="card" style="width: auto;">
-  <img src="assets/images/album-test/aerosmith.jpg" class="card-img-top" alt="...">
+<div class="card shadow" style="width: auto; align-items: stretch">
+  <img src="{{imgUrl}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">album title</h5>
-    <p class="card-text">band name</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title text-uppercase">{{albumTitle}}</h5>
+    <p class="card-text">{{band}}</p>
+    <a routerLink="/albums/{{albumId}}" class="btn btn-outline-dark">See Album</a>
   </div>
 </div>

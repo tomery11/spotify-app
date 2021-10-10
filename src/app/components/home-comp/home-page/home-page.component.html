@@ -2,33 +2,28 @@
 
   <div class="offset-3 col-6 mt-5 text-center">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input [(ngModel)]="searchQuery" (keyup)="searchAllAlbums()" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+<!--      <button class="btn btn-outline-success" type="submit">Search</button>-->
     </form>
-    <!--    <input class="" type="search" placeholder="Search" aria-label="Search">-->
-    <!--    <button class="btn btn-outline-success" type="submit">Search</button>-->
+
   </div>
 </div>
+
+
+<!--<pre>{{albums | json}}</pre>-->
+
+
 <div class="container">
   <div class="row mt-5">
-    <div class="col text-center">
-      <app-album-card></app-album-card>
+    <div class="col-md-2 text-center my-3" *ngFor="let album of albums">
+      <app-album-card
+        albumTitle="{{album.name}}"
+        imgUrl="{{album.images[0].url}}"
+        band="{{album.artists[0].name}}"
+        albumId="{{album.id}}"
+      ></app-album-card>
     </div>
-    <div class="col text-center">
-      <app-album-card></app-album-card>
-    </div>
-    <div class="col text-center">
-      <app-album-card></app-album-card>
-    </div>
-    <div class="col text-center">
-      <app-album-card></app-album-card>
-    </div>
-    <div class="col text-center">
-      <app-album-card></app-album-card>
-    </div>
-    <div class="col text-center">
-      <app-album-card></app-album-card>
-    </div>
+
 
 
 
