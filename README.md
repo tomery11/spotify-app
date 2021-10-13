@@ -1,5 +1,6 @@
 # SpotifyApp
 
+This web app is a clone of spotify using spotify's web api.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
 
 ## Development server
