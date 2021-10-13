@@ -1,25 +1,35 @@
-<app-nav-bar></app-nav-bar>
+<!--<app-nav-bar></app-nav-bar>-->
 
+<!--<pre>{{album | json}}</pre>-->
+<div class="row">
+  <div class="col-2">
+    <a href="/">
+      <button type="button" class="btn btn-outline-light rounded m-5">Back</button>
 
+    </a>
 
-<div class="row mt-4 p-5">
-  <div class="col-md-2">
-    <img src="{{album.images[0].url}}" class="rounded img-fluid float-start" alt="...">
   </div>
-  <div class="col-md-3 my-3">
-    <h3 class="text-center my-2">Artist: {{album.artists[0].name}}</h3>
+
+</div>
+
+<div class="row mt-4 p-5 " *ngIf="album">
+  <div  class="col-md-2" *ngIf="album.images.length > 0">
+    <img src="{{album.images[0].url}}" class="rounded img-fluid float-start border" alt="...">
+  </div>
+  <div class="col-md-3 my-3 text-light">
+    <h3 class="text-center my-2" *ngIf="album.artists.length > 0">Artist: {{album.artists[0].name}}</h3>
     <h3 class="text-center my-2">Album: {{album.name}}</h3>
 
   </div>
 
 </div>
 
-<!--<pre>{{tracks | json}}</pre>-->
+<!--<pre>{{tracks.artists | json}}</pre>-->
 
 <div class="container">
   <div class="row mt-5">
-    <div class="col-2 text-center my-3" *ngFor="let track of tracks">
-      <app-track-card
+    <div  class="col-2 text-center my-3" *ngFor="let track of tracks">
+      <app-track-card *ngIf="album"
       imgUrl="{{album.images[0].url}}"
       trackTitle="{{track.name}}"
       length="{{ track.duration_ms }}"
@@ -32,22 +42,3 @@
 
 </div>
 
-<div class="row my-5">
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>

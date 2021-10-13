@@ -1,7 +1,8 @@
-<div class="card shadow" style="width: auto;">
+<div class="card shadow" style="width: auto; min-height: 350px ">
+
   <img src="{{imgUrl}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{trackTitle}}</h5>
+    <h5 dir="auto" class="card-title" data-toggle="tooltip" data-placement="top" title="{{trackTitle}}">{{trimName(trackTitle)}}</h5>
     <p class="card-text">Track Num. {{trackNumber}}</p>
     <p class="card-text">{{ msToTime(length) }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
       <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>

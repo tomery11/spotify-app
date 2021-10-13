@@ -16,6 +16,23 @@ export class AlbumCardComponent implements OnInit {
   albumId: string = '';
   constructor() { }
 
+
+  public trimName(name: string){
+    const length =9;
+    let trimmedString = name
+    if (name.length > length){
+      // const string = name
+      trimmedString = trimmedString.substring(0, length);
+
+      trimmedString = trimmedString.concat('...')
+      // console.log(trimmedString)
+
+    }
+    return trimmedString;
+
+
+  }
+
   ngOnInit(): void {
   }
 

@@ -20,6 +20,22 @@ export class TrackCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public trimName(name: string){
+    const length =10;
+    let trimmedString = name
+    if (name.length > length){
+      // const string = name
+      trimmedString = trimmedString.substring(0, length);
+
+      trimmedString = trimmedString.concat('...')
+      // console.log(trimmedString)
+
+    }
+    return trimmedString;
+
+
+  }
+
   public msToTime(sec: string) {
     let s = Number(sec)
     let ms = s % 1000;

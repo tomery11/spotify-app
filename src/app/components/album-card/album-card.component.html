@@ -1,8 +1,8 @@
-<div class="card shadow" style="width: auto; align-items: stretch">
-  <img src="{{imgUrl}}" class="card-img-top" alt="...">
+<div class="card shadow " style="width: auto; align-items: stretch; min-height: 350px ">
+  <img *ngIf="imgUrl" src="{{imgUrl}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title text-uppercase">{{albumTitle}}</h5>
-    <p class="card-text">{{band}}</p>
+    <h5 *ngIf="albumTitle" dir="auto" class="card-title text-uppercase" data-toggle="tooltip" data-placement="top" title="{{albumTitle}}">{{trimName(albumTitle)}}</h5>
+    <p *ngIf="band" dir="auto" class="card-text" data-toggle="tooltip" data-placement="top" title="{{band}}">{{trimName(band)}}</p>
     <a routerLink="/albums/{{albumId}}" class="btn btn-outline-dark">See Album</a>
   </div>
 </div>

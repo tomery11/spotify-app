@@ -11,6 +11,8 @@ import { HomePageComponent } from './components/home-comp/home-page/home-page.co
 import {SpotifyService} from "./services/spotify.service";
 import {HttpClientModule} from "@angular/common/http";
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgxPaginationModule} from "ngx-pagination"
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ]),
     HttpClientModule,
     FormsModule,
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [SpotifyService],
   bootstrap: [AppComponent]
